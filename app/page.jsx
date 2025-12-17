@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import LinkButton from "./components/LinkButton";
 
 export default function Portfolio() {
   return (
@@ -181,56 +180,6 @@ export default function Portfolio() {
                   </ul>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section style={{ marginBottom: "4rem" }}>
-          <h3
-            style={{
-              fontSize: "1.5rem",
-              fontWeight: "600",
-              color: "#1a2332",
-              marginBottom: "1.5rem",
-              paddingBottom: "0.75rem",
-              borderBottom: "3px solid #1a2332",
-            }}
-          >
-            Contact
-          </h3>
-          <div
-            style={{
-              backgroundColor: "white",
-              border: "1px solid #e1e8ed",
-              borderRadius: "4px",
-              padding: "2rem",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "1rem",
-                color: "#4a5568",
-                marginBottom: "1.5rem",
-                lineHeight: "1.8",
-              }}
-            >
-              I am currently seeking front-end development opportunities for Summer 2026.
-              Please feel free to reach out to discuss potential opportunities.
-            </p>
-
-            <div style={{ display: "flex", gap: "1.25rem", justifyContent: "center" }}>
-              <LinkButton href="mailto:jbutler20004@gmail.com" external>
-                Email Me
-              </LinkButton>
-
-              <LinkButton href="https://www.linkedin.com/in/jacob-butler919/" external>
-                LinkedIn
-              </LinkButton>
-
-              <LinkButton href="https://github.com/jakebtlr" external>
-                GitHub
-              </LinkButton>
             </div>
           </div>
         </section>
