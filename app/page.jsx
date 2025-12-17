@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import LinkButton from "./components/LinkButton";
+
 
 export default function Portfolio() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -76,7 +78,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <header style={{
         backgroundColor: "white",
-        padding: "4rem 2rem",
+        padding: "5rem 2rem",
         borderBottom: "1px solid #e1e8ed"
       }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -88,16 +90,31 @@ export default function Portfolio() {
           }}>
             Front-End Developer
           </h2>
-          <p style={{
-            fontSize: "1.1rem",
-            color: "#5a6c7d",
-            maxWidth: "700px",
-            lineHeight: "1.7",
-            margin: 0
-          }}>
-            Computer Science student at UNC Charlotte specializing in Human-Computer Interaction. 
-            Experienced in building responsive, user-centered web applications with React, Next.js, and TypeScript.
-          </p>
+          <div style={{ maxWidth: "540px" }}>
+            <p
+              style={{
+                fontSize: "1.1rem",
+                color: "#1a2332",
+                lineHeight: "1.6",
+                margin: "0 0 0.75rem 0",
+              }}
+            >
+              Computer Science student at UNC Charlotte specializing in
+              Human-Computer Interaction.
+            </p>
+
+            <p
+              style={{
+                fontSize: "0.95rem",
+                color: "#5a6c7d",
+                lineHeight: "1.6",
+                margin: 0,
+              }}
+            >
+              Focused on building responsive, user-centered web applications
+              with React, Next.js, and TypeScript.
+            </p>
+          </div>
         </div>
       </header>
 
@@ -132,7 +149,7 @@ export default function Portfolio() {
             color: "#4a5568"
           }}>
             I am passionate about creating intuitive interfaces that solve real problems and enhance user experience. 
-            I am currently seeking front-end development opportunities beginning in 2026.
+            I am currently seeking front-end development opportunities beginning in Summer 2026.
           </p>
         </section>
 
@@ -262,48 +279,20 @@ export default function Portfolio() {
             
             <div>
               <div style={{ display: "flex", gap: "0.75rem" }}>  
-                <a 
-                  href="https://itis4390-rockauto.loganphinney.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-block",
-                    backgroundColor: "#1a2332",
-                    color: "white",
-                    padding: "0.75rem 1.5rem",
-                    fontSize: "0.95rem",
-                    fontWeight: "600",
-                    borderRadius: "4px",
-                    textDecoration: "none",
-                    transition: "background-color 0.2s"
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2c3e50"}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#1a2332"}
+                <LinkButton
+                  href="https://itis4390-rockauto.loganphinney.com/"
+                  external
                 >
                   View Live Site →
-                </a>
-
+                </LinkButton>
                 
-                <a 
-                  href="https://github.com/LPhinney1/ITIS4390-capstone-rockauto" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-block",
-                    backgroundColor: "#1a2332",
-                    color: "white",
-                    padding: "0.75rem 1.5rem",
-                    fontSize: "0.95rem",
-                    fontWeight: "600",
-                    borderRadius: "4px",
-                    textDecoration: "none",
-                    transition: "background-color 0.2s"
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2c3e50"}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#1a2332"}
+
+                <LinkButton
+                  href="https://github.com/LPhinney1/ITIS4390-capstone-rockauto"
+                  external
                 >
                   View GitHub Repository →
-                </a>
+                </LinkButton>
               </div>
               <p style={{
                 fontSize: "0.85rem",
@@ -503,7 +492,7 @@ export default function Portfolio() {
               marginBottom: "1.5rem",
               lineHeight: "1.8"
             }}>
-              I am currently seeking front-end development opportunities for 2026. 
+              I am currently seeking front-end development opportunities for Summer 2026. 
               Please feel free to reach out to discuss potential opportunities.
             </p>
             <div style={{
@@ -511,39 +500,29 @@ export default function Portfolio() {
               flexDirection: "column",
               gap: "0.75rem"
             }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                <span style={{ fontWeight: "600", color: "#1a2332", minWidth: "80px" }}>Email:</span>
-                <a href="mailto:jbutler20004@gmail.com" style={{
-                  color: "#2563eb",
-                  textDecoration: "none",
-                  fontSize: "1rem"
-                }}>
-                  jbutler20004@gmail.com
-                </a>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                <span style={{ fontWeight: "600", color: "#1a2332", minWidth: "80px" }}>LinkedIn:</span>
-                <a href="https://www.linkedin.com/in/jacob-butler919/" style={{
-                  color: "#2563eb",
-                  textDecoration: "none",
-                  fontSize: "1rem"
-                }}>
-                  linkedin.com/in/jacob-butler919/
-                </a>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                <span style={{ fontWeight: "600", color: "#1a2332", minWidth: "80px" }}>Personal GitHub:</span>
-                <a href="https://github.com/jakebtlr" style={{
-                  color: "#2563eb",
-                  textDecoration: "none",
-                  fontSize: "1rem"
-                }}>
-                  github.com/jakebtlr
-                </a>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                <span style={{ fontWeight: "600", color: "#1a2332", minWidth: "80px" }}>Location:</span>
-                <span style={{ color: "#4a5568", fontSize: "1rem" }}>Charlotte, North Carolina</span>
+              <div style={{ display: "flex", gap: "1.25rem", justifyContent: "center" }}>  
+                <LinkButton
+                  href="mailto:jbutler20004@gmail.com"
+                  external
+                >
+                  Email Me
+                </LinkButton>
+                
+
+                <LinkButton
+                  href="https://www.linkedin.com/in/jacob-butler919/"
+                  external
+                >
+                  LinkedIn
+                </LinkButton>
+
+
+                <LinkButton
+                  href="https://github.com/jakebtlr"
+                  external
+                >
+                  GitHub
+                </LinkButton>
               </div>
             </div>
           </div>
