@@ -50,9 +50,9 @@ export default function Portfolio() {
               JavaScript, TypeScript, React, and Next.js.
             </p>
             <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem" }}>
-              <LinkButton href="/projects">View Projects</LinkButton>
+              <LinkButton href="/projects">View Projects →</LinkButton>
               <LinkButton href="/portfolio-resume.docx.pdf" download>
-                Download Resume
+                ⬇ Download Resume
               </LinkButton>
             </div>
           </div>
