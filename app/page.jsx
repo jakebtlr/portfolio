@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import LinkButton from "./components/LinkButton";
 
 export default function Portfolio() {
   return (
@@ -48,6 +49,12 @@ export default function Portfolio() {
               Focused on building responsive, user-centered web applications with
               JavaScript, TypeScript, React, and Next.js.
             </p>
+            <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem" }}>
+              <LinkButton href="/projects">View Projects</LinkButton>
+              <LinkButton href="/portfolio-resume.docx.pdf" download>
+                Download Resume
+              </LinkButton>
+            </div>
           </div>
         </div>
       </header>
@@ -68,6 +75,16 @@ export default function Portfolio() {
           >
             About
           </h3>
+          <h4 
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.8",
+              color: "#4a5568",
+              marginBottom: "1rem",
+            }}
+          >
+            Background
+          </h4>
           <p
             style={{
               fontSize: "1rem",
@@ -76,11 +93,66 @@ export default function Portfolio() {
               marginBottom: "1rem",
             }}
           >
-            I am a senior at the University of North Carolina at Charlotte pursuing a
-            B.A. in Computer Science with a concentration in Human-Computer Interaction.
-            My academic focus combines technical software development with user-centered
-            design principles.
+            I am a senior at the University of North Carolina at Charlotte pursuing a B.A. 
+            in Computer Science with a concentration in Human-Computer Interaction, 
+            graduating May 2026. I have maintained a 3.79 GPA and earned Chancellor's List 
+            and Dean's List honors multiple times.
           </p>
+          <h4 
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.8",
+              color: "#4a5568",
+              marginBottom: "1rem",
+            }}
+          >
+            Recent Work
+          </h4>
+          <p
+            style={{
+              fontSize: "1rem",
+              lineHeight: "1.8",
+              color: "#4a5568",
+            }}
+          >
+            I recently completed a 14-week capstone project where I led front-end 
+            development for a comprehensive e-commerce platform redesign. Working with a 
+            6-person team, I built core features including product detail pages, shopping 
+            cart system, multi-step checkout flow, and product comparison tools using 
+            Next.js, React, TypeScript, and PostgreSQL.
+          </p>
+          <h4 
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.8",
+              color: "#4a5568",
+              marginBottom: "1rem",
+            }}
+          >
+            Experience & Perspective
+          </h4>
+          <p
+            style={{
+              fontSize: "1rem",
+              lineHeight: "1.8",
+              color: "#4a5568",
+            }}
+          >
+            In Summer 2025, I studied abroad in Japan and South Korea, broadening my 
+            understanding of global design approaches and user experiences. My background 
+            also includes leadership experience as a Shift Lead and Certified Trainer, 
+            which strengthened my ability to collaborate effectively and leadership skills.
+          </p>
+          <h4 
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.8",
+              color: "#4a5568",
+              marginBottom: "1rem",
+            }}
+          >
+            What I'm Looking For
+          </h4>
           <p
             style={{
               fontSize: "1rem",

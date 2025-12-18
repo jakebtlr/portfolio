@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function LinkButton({ href, children, external = false }) {
+export default function LinkButton({ href, children, external = false, download = false }) {
     const baseStyle = { 
         display: "inline-block",
         backgroundColor: "#1a2332",
@@ -20,6 +20,20 @@ export default function LinkButton({ href, children, external = false }) {
     const hoverOut = (e) => {
         e.currentTarget.style.backgroundColor = "#1a2332";
     };
+
+    if (download) {
+        return (
+            <a 
+                href={href}
+                download
+                style={baseStyle}
+                onMouseEnter={hoverIn}
+                onMouseLeave={hoverOut}
+            >
+                {children}
+            </a>
+        );
+    }
 
     if (external) {
         return (
