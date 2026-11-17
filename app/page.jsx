@@ -34,8 +34,8 @@ export default function Portfolio() {
                 margin: "0 0 0.75rem 0",
               }}
             >
-              Computer Science student at UNC Charlotte specializing in Human-Computer
-              Interaction.
+              UNC Charlotte Computer Science graduate specializing in Human-Computer
+              Interaction, now pursuing a Master in Management in Tokyo.
             </p>
 
             <p
@@ -51,7 +51,7 @@ export default function Portfolio() {
             </p>
             <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem" }}>
               <LinkButton href="/projects">View Projects →</LinkButton>
-              <LinkButton href="/portfolio-resume.docx.pdf" download>
+              <LinkButton href="/JacobButler_Resume.pdf" download>
                 ⬇ Download Resume
               </LinkButton>
             </div>
@@ -93,10 +93,11 @@ export default function Portfolio() {
               marginBottom: "1rem",
             }}
           >
-            I am a senior at the University of North Carolina at Charlotte pursuing a B.A. 
-            in Computer Science with a concentration in Human-Computer Interaction, 
-            graduating May 2026. I have maintained a 3.79 GPA and earned Chancellor's List 
-            and Dean's List honors multiple times.
+            I earned a B.A. in Computer Science with a concentration in Human-Computer
+            Interaction from the University of North Carolina at Charlotte (May 2026),
+            graduating with a 3.80 GPA and earning Chancellor's List and Dean's List honors
+            three times each. I am now based in Tokyo, pursuing a Master in Management (MiM)
+            at Temple University, Japan Campus.
           </p>
           <h4 
             style={{
@@ -115,11 +116,24 @@ export default function Portfolio() {
               color: "#4a5568",
             }}
           >
-            I recently completed a 14-week capstone project where I led front-end 
-            development for a comprehensive e-commerce platform redesign. Working with a 
-            6-person team, I built core features including product detail pages, shopping 
-            cart system, multi-step checkout flow, and product comparison tools using 
+            In my 14-week interaction design capstone, I led end-to-end product ownership of
+            four core shopping flows for a RockAuto.com redesign. Working with a 6-person
+            cross-functional team, I took product detail pages, the shopping cart, a 3-step
+            checkout, and a product comparison tool from discovery through delivery using
             Next.js, React, TypeScript, and PostgreSQL.
+          </p>
+          <p
+            style={{
+              fontSize: "1rem",
+              lineHeight: "1.8",
+              color: "#4a5568",
+            }}
+          >
+            I also conducted human-centered AI research, designing a high-fidelity Figma
+            prototype that adds sense-making features to an AI chatbot interface to promote
+            active student learning. I ran a within-subjects user study against standard AI
+            tools and wrote up the findings as an ACM-format research paper with design
+            recommendations for student-facing AI interfaces.
           </p>
           <h4 
             style={{
@@ -140,8 +154,9 @@ export default function Portfolio() {
           >
             In Summer 2025, I studied abroad in Japan and South Korea, broadening my 
             understanding of global design approaches and user experiences. My background 
-            also includes leadership experience as a Shift Lead and Certified Trainer, 
-            which strengthened my ability to collaborate effectively and leadership skills.
+            also includes leadership experience as a Shift Lead and Certified Trainer, where I
+            owned onboarding and training programs and coordinated 6-7 person teams in a
+            high-volume, customer-facing environment.
           </p>
           <h4 
             style={{
@@ -178,7 +193,7 @@ export default function Portfolio() {
               borderBottom: "3px solid #1a2332",
             }}
           >
-            Technical Skills
+            Skills
           </h3>
           <div
             style={{
@@ -197,28 +212,49 @@ export default function Portfolio() {
             >
               {[
                 {
-                  category: "Frontend Development",
+                  category: "Product",
+                  skills: [
+                    "User Research",
+                    "Wireframing & Prototyping",
+                    "Usability Testing",
+                    "Product Discovery",
+                    "Software Development Lifecycle",
+                    "Market Research",
+                  ],
+                },
+                {
+                  category: "Frontend",
                   skills: [
                     "JavaScript",
                     "TypeScript",
                     "React",
                     "Next.js",
-                    "HTML5/CSS3",
+                    "HTML/CSS",
                     "Tailwind CSS",
+                    "Responsive Design",
                   ],
                 },
                 {
-                  category: "Backend & Database",
-                  skills: ["Node.js", "PostgreSQL", "SQL", "Java"],
+                  category: "Backend & Data",
+                  skills: [
+                    "Node.js",
+                    "SQL",
+                    "PostgreSQL",
+                    "REST APIs",
+                    "OpenAPI",
+                    "Express",
+                    "Prisma ORM",
+                  ],
                 },
                 {
-                  category: "Tools & Methodologies",
+                  category: "Tools & Methods",
                   skills: [
-                    "Git/GitHub",
                     "Figma",
-                    "Agile Development",
-                    "Responsive Design",
-                    "UI/UX Design",
+                    "Git/GitHub",
+                    "Agile/Scrum",
+                    "Excel",
+                    "PowerPoint",
+                    "Word",
                   ],
                 },
               ].map((group) => (
