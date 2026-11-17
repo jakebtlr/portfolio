@@ -7,13 +7,16 @@ import { usePathname } from "next/navigation";
 export default function Header() {
     const pathname = usePathname();
 
+    const isActive = (href) =>
+        href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+
     const linkStyle = (href) => ({
-        color: pathname === href ? "white" : "#8b98a8",
+        color: isActive(href) ? "white" : "#8b98a8",
         textDecoration: "none",
         fontSize: "0.95 rem",
         fontWeight: 500,
         padding: "0.25rem 0",
-        borderBottom: pathname === href ? "2px solid white" : "2px solid transparent",
+        borderBottom: isActive(href) ? "2px solid white" : "2px solid transparent",
         transition: "color 0.2s, border-color 0.2s",
         whiteSpace: "nowrap",
     });
@@ -56,9 +59,9 @@ export default function Header() {
                 </Link>
 
                 <div style={{ display: "flex", gap: "1.25rem", alignItems: "center", flexWrap: "wrap" }}>
-                    <Link href="/" style={linkStyle("/")}>About</Link>
-                    <Link href="/projects" style={linkStyle("/projects")}>Projects &amp; Research</Link>
-                    <Link href="/contact" style={linkStyle("/contact")}>Contact</Link>
+                    <Link href="/" style={linkStyle("/")} aria-current={isActive("/") ? "page" : undefined}>About</Link>
+                    <Link href="/projects" style={linkStyle("/projects")} aria-current={isActive("/projects") ? "page" : undefined}>Projects &amp; Research</Link>
+                    <Link href="/contact" style={linkStyle("/contact")} aria-current={isActive("/contact") ? "page" : undefined}>Contact</Link>
                 </div>
             </div>
         </nav>

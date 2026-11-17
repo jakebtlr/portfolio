@@ -1,9 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import LinkButton from "../components/LinkButton";
 
+const EMAIL = "butlerjacob919@gmail.com";
+
 export default function ContactPage() {
+    const [copied, setCopied] = useState(false);
+
+    const copyEmail = async () => {
+        try {
+            await navigator.clipboard.writeText(EMAIL);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        } catch {
+            // Clipboard unavailable; the address is still visible to select manually.
+        }
+    };
+
     return (
         <>
             {/* Hero */}
@@ -75,7 +89,7 @@ export default function ContactPage() {
                                 flexWrap: "wrap",
                             }}
                         >
-                            <LinkButton href="mailto:butlerjacob919@gmail.com" external>
+                            <LinkButton href={`mailto:${EMAIL}`}>
                                 Email Me
                             </LinkButton>
 
@@ -89,6 +103,58 @@ export default function ContactPage() {
                             <LinkButton href="https://github.com/jakebtlr" external>
                                 GitHub
                             </LinkButton>
+
+                            <LinkButton href="/JacobButler_Resume.pdf" download>
+                                ⬇ Resume
+                            </LinkButton>
+                        </div>
+
+                        <div
+                            style={{
+                                marginTop: "2rem",
+                                paddingTop: "1.5rem",
+                                borderTop: "1px solid #e1e8ed",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                gap: "0.6rem",
+                                color: "#4a5568",
+                                fontSize: "0.95rem",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "0.75rem",
+                                    flexWrap: "wrap",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <span style={{ fontWeight: 600, color: "#1a2332", wordBreak: "break-all" }}>
+                                    {EMAIL}
+                                </span>
+                                <button
+                                    type="button"
+                                    onClick={copyEmail}
+                                    style={{
+                                        backgroundColor: "white",
+                                        color: "#1a2332",
+                                        border: "1px solid #d1d9e0",
+                                        borderRadius: "4px",
+                                        padding: "0.35rem 0.8rem",
+                                        fontSize: "0.85rem",
+                                        fontWeight: 600,
+                                        cursor: "pointer",
+                                    }}
+                                >
+                                    {copied ? "Copied ✓" : "Copy"}
+                                </button>
+                                <span aria-live="polite" style={{ position: "absolute", left: "-9999px" }}>
+                                    {copied ? "Email address copied" : ""}
+                                </span>
+                            </div>
+                            <div style={{ textAlign: "center" }}>Based in Tokyo, Japan (JST, UTC+9)</div>
                         </div>
                     </div>
                 </section>
