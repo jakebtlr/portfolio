@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import LinkButton from "../components/LinkButton";
 import HeroCard, { heroRowStyle, heroRowLabelStyle, heroRowValueStyle } from "../components/HeroCard";
 
+const compactRow = { ...heroRowStyle, padding: "0.55rem 0", gap: "0.1rem" };
+const compactValue = { ...heroRowValueStyle, fontSize: "0.9rem", lineHeight: 1.45 };
+
 const EMAIL = "butlerjacob919@gmail.com";
 
 export default function ContactPage() {
@@ -94,28 +97,44 @@ export default function ContactPage() {
                     </p>
                     </div>
 
-                    <HeroCard title="At a glance">
-                        <div style={heroRowStyle}>
-                            <span style={heroRowLabelStyle}>Open to</span>
-                            <span style={heroRowValueStyle}>
-                                Software Development · Product Management · Project Management
-                            </span>
-                        </div>
-                        <div style={heroRowStyle}>
-                            <span style={heroRowLabelStyle}>Start</span>
-                            <span style={heroRowValueStyle}>Summer 2027</span>
-                        </div>
-                        <div style={heroRowStyle}>
-                            <span style={heroRowLabelStyle}>Location</span>
-                            <span style={heroRowValueStyle}>
-                                Tokyo, Japan · Open to relocating to North Carolina
-                            </span>
-                        </div>
-                        <div style={{ ...heroRowStyle, paddingBottom: 0 }}>
-                            <span style={heroRowLabelStyle}>My local time</span>
-                            <span style={heroRowValueStyle}>
-                                {tokyoTime ? `${tokyoTime} JST` : "JST (UTC+9)"}
-                            </span>
+                    <HeroCard title="At a glance" compact>
+                        <div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                columnGap: "1.25rem",
+                            }}
+                        >
+                            <div style={{ ...compactRow, gridColumn: "1 / -1" }}>
+                                <span style={heroRowLabelStyle}>Open to</span>
+                                <span style={compactValue}>
+                                    {["Software Development", "Product Management", "Project Management"].map((role, i, all) => (
+                                        <React.Fragment key={role}>
+                                            <span style={{ whiteSpace: "nowrap" }}>
+                                                {role}
+                                                {i < all.length - 1 ? " ·" : ""}
+                                            </span>
+                                            {i < all.length - 1 ? " " : ""}
+                                        </React.Fragment>
+                                    ))}
+                                </span>
+                            </div>
+                            <div style={compactRow}>
+                                <span style={heroRowLabelStyle}>Start</span>
+                                <span style={compactValue}>Summer 2027</span>
+                            </div>
+                            <div style={compactRow}>
+                                <span style={heroRowLabelStyle}>My local time</span>
+                                <span style={compactValue}>
+                                    {tokyoTime ? `${tokyoTime} JST` : "JST (UTC+9)"}
+                                </span>
+                            </div>
+                            <div style={{ ...compactRow, gridColumn: "1 / -1", paddingBottom: 0 }}>
+                                <span style={heroRowLabelStyle}>Location</span>
+                                <span style={compactValue}>
+                                    Tokyo, Japan · Open to relocating to North Carolina
+                                </span>
+                            </div>
                         </div>
                     </HeroCard>
                 </div>

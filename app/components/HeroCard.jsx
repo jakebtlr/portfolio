@@ -1,4 +1,4 @@
-export default function HeroCard({ title, children }) {
+export default function HeroCard({ title, children, compact = false }) {
     return (
         <aside
             aria-label={title}
@@ -7,7 +7,7 @@ export default function HeroCard({ title, children }) {
                 backgroundColor: "#f8f9fa",
                 border: "1px solid #e1e8ed",
                 borderRadius: "6px",
-                padding: "1.5rem",
+                padding: compact ? "1.1rem 1.25rem" : "1.5rem",
             }}
         >
             <div
@@ -17,7 +17,7 @@ export default function HeroCard({ title, children }) {
                     color: "#718096",
                     textTransform: "uppercase",
                     letterSpacing: "0.5px",
-                    marginBottom: "1rem",
+                    marginBottom: compact ? "0.5rem" : "1rem",
                 }}
             >
                 {title}
