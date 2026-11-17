@@ -2,6 +2,12 @@
 
 import React from "react";
 import LinkButton from "../components/LinkButton";
+import HeroCard, { heroRowStyle, heroRowLabelStyle, heroRowValueStyle } from "../components/HeroCard";
+
+const onThisPage = [
+    { type: "Project", title: "RockAuto.com E-Commerce Redesign", dates: "Aug–Dec 2025", href: "#projects" },
+    { type: "Research", title: "AI Interface Sense-Making Study", dates: "Jan–May 2026", href: "#research" },
+];
 
 export default function ProjectsPage() {
   return (
@@ -21,7 +27,18 @@ export default function ProjectsPage() {
                     borderBottom: "1px solid #e1e8ed",
                 }}
             >
-                <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+                <div
+                    style={{
+                        maxWidth: "1200px",
+                        margin: "0 auto",
+                        display: "flex",
+                        flexWrap: "wrap",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: "2.5rem",
+                    }}
+                >
+                    <div style={{ flex: "1 1 320px" }}>
                     <h2
                         style={{
                             fontSize: "2.25rem",
@@ -44,13 +61,36 @@ export default function ProjectsPage() {
                         Selected projects and research highlighting UI/UX research and design, front-end development, and
                         human-centered AI.
                     </p>
+                    </div>
+
+                    <HeroCard title="On this page">
+                        {onThisPage.map((item) => (
+                            <a
+                                key={item.href}
+                                href={item.href}
+                                style={{ ...heroRowStyle, textDecoration: "none" }}
+                                onMouseEnter={(e) => (e.currentTarget.querySelector("[data-title]").style.textDecoration = "underline")}
+                                onMouseLeave={(e) => (e.currentTarget.querySelector("[data-title]").style.textDecoration = "none")}
+                            >
+                                <span style={heroRowLabelStyle}>
+                                    {item.type} · {item.dates}
+                                </span>
+                                <span data-title style={heroRowValueStyle}>
+                                    {item.title} ↓
+                                </span>
+                            </a>
+                        ))}
+                    </HeroCard>
                 </div>
             </header>
 
         {/* Main Content */}
         <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "3rem 2rem" }}>
             {/* Featured Project */}
-                <section style={{ marginBottom: "4rem" }}>
+                <section
+                    id="projects"
+                    style={{ marginBottom: "4rem", scrollMarginTop: "calc(var(--header-height, 78px) + 1rem)" }}
+                >
                     <h3
                         style={{
                             fontSize: "1.5rem",
