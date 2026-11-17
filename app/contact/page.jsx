@@ -1,12 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LinkButton from "../components/LinkButton";
+import HeroCard, { heroRowStyle, heroRowLabelStyle, heroRowValueStyle } from "../components/HeroCard";
 
 const EMAIL = "butlerjacob919@gmail.com";
 
 export default function ContactPage() {
     const [copied, setCopied] = useState(false);
+    const [tokyoTime, setTokyoTime] = useState(null);
+
+    // Rendered after mount so the static HTML doesn't bake in the build-time clock.
+    useEffect(() => {
+        const format = new Intl.DateTimeFormat("en-US", {
+            timeZone: "Asia/Tokyo",
+            hour: "numeric",
+            minute: "2-digit",
+            weekday: "short",
+        });
+        const tick = () => setTokyoTime(format.format(new Date()));
+        tick();
+        const id = setInterval(tick, 30000);
+        return () => clearInterval(id);
+    }, []);
 
     const copyEmail = async () => {
         try {
@@ -28,7 +44,18 @@ export default function ContactPage() {
                     borderBottom: "1px solid #e1e8ed",
                 }}
             >
-                <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+                <div
+                    style={{
+                        maxWidth: "1200px",
+                        margin: "0 auto",
+                        display: "flex",
+                        flexWrap: "wrap",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: "2.5rem",
+                    }}
+                >
+                    <div style={{ flex: "1 1 320px" }}>
                     <h2
                         style={{
                             fontSize: "2.25rem",
@@ -51,6 +78,32 @@ export default function ContactPage() {
                         I am currently seeking software development, product, and project management
                         opportunities starting in Summer 2027. Please feel free to reach out using any of the methods below.
                     </p>
+                    </div>
+
+                    <HeroCard title="At a glance">
+                        <div style={heroRowStyle}>
+                            <span style={heroRowLabelStyle}>Open to</span>
+                            <span style={heroRowValueStyle}>
+                                Software Development · Product Management · Project Management
+                            </span>
+                        </div>
+                        <div style={heroRowStyle}>
+                            <span style={heroRowLabelStyle}>Start</span>
+                            <span style={heroRowValueStyle}>Summer 2027</span>
+                        </div>
+                        <div style={heroRowStyle}>
+                            <span style={heroRowLabelStyle}>Location</span>
+                            <span style={heroRowValueStyle}>
+                                Tokyo, Japan · Open to relocating to North Carolina
+                            </span>
+                        </div>
+                        <div style={{ ...heroRowStyle, paddingBottom: 0 }}>
+                            <span style={heroRowLabelStyle}>My local time</span>
+                            <span style={heroRowValueStyle}>
+                                {tokyoTime ? `${tokyoTime} JST` : "JST (UTC+9)"}
+                            </span>
+                        </div>
+                    </HeroCard>
                 </div>
             </header>
 
