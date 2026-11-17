@@ -15,6 +15,7 @@ export default function Header() {
         padding: "0.25rem 0",
         borderBottom: pathname === href ? "2px solid white" : "2px solid transparent",
         transition: "color 0.2s, border-color 0.2s",
+        whiteSpace: "nowrap",
     });
 
     return (
@@ -35,7 +36,8 @@ export default function Header() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    gap: "1.5rem",
+                    flexWrap: "wrap",
+                    gap: "0.75rem 1.5rem",
                   }}
             >
                 <Link
@@ -53,9 +55,9 @@ export default function Header() {
                     JACOB BUTLER
                 </Link>
 
-                <div style={{ display: "flex", gap: "1.25rem", alignItems: "center" }}>
+                <div style={{ display: "flex", gap: "1.25rem", alignItems: "center", flexWrap: "wrap" }}>
                     <Link href="/" style={linkStyle("/")}>About</Link>
-                    <Link href="/projects" style={linkStyle("/projects")}>Projects</Link>
+                    <Link href="/projects" style={linkStyle("/projects")}>Projects &amp; Research</Link>
                     <Link href="/contact" style={linkStyle("/contact")}>Contact</Link>
                 </div>
             </div>

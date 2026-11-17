@@ -23,7 +23,7 @@ export default function Portfolio() {
               color: "#1a2332",
             }}
           >
-            Front-End Developer
+            Developer &amp; Product Builder
           </h2>
           <div style={{ maxWidth: "540px" }}>
             <p
@@ -50,7 +50,7 @@ export default function Portfolio() {
               JavaScript, TypeScript, React, and Next.js.
             </p>
             <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem" }}>
-              <LinkButton href="/projects">View Projects →</LinkButton>
+              <LinkButton href="/projects">View Projects &amp; Research →</LinkButton>
               <LinkButton href="/JacobButler_Resume.pdf" download>
                 ⬇ Download Resume
               </LinkButton>
@@ -118,9 +118,10 @@ export default function Portfolio() {
           >
             In my 14-week interaction design capstone, I led end-to-end product ownership of
             four core shopping flows for a RockAuto.com redesign. Working with a 6-person
-            cross-functional team, I took product detail pages, the shopping cart, a 3-step
-            checkout, and a product comparison tool from discovery through delivery using
-            Next.js, React, TypeScript, and PostgreSQL.
+            cross-functional team, I conducted the UI/UX research and design, then built
+            product detail pages, the shopping cart, a 3-step checkout, and a product comparison
+            tool, taking them from discovery through delivery using Next.js, React, TypeScript,
+            and PostgreSQL.
           </p>
           <p
             style={{
@@ -176,8 +177,9 @@ export default function Portfolio() {
             }}
           >
             I am passionate about creating intuitive interfaces that solve real problems
-            and enhance user experience. I am currently seeking front-end development
-            opportunities beginning in Summer 2026.
+            and enhance user experience. I am currently seeking software development,
+            product management, and project management opportunities beginning in
+            Summer 2027.
           </p>
         </section>
 
