@@ -227,7 +227,10 @@ export default function ProjectsPage() {
             </section>
 
             {/* Research */}
-            <section style={{ marginBottom: "4rem" }}>
+            <section
+                id="research"
+                style={{ marginBottom: "4rem", scrollMarginTop: "calc(var(--header-height, 78px) + 1rem)" }}
+            >
                 <h3
                     style={{
                         fontSize: "1.5rem",

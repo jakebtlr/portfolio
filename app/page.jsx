@@ -1,7 +1,31 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import LinkButton from "./components/LinkButton";
+
+const featuredWork = [
+  {
+    label: "Capstone · Aug–Dec 2025",
+    title: "RockAuto.com E-Commerce Redesign",
+    summary:
+      "Led the UI/UX research, design, and front-end build of four core shopping flows (product detail, cart, 3-step checkout, and comparison) with a 6-person team, using Next.js, React, TypeScript, and PostgreSQL.",
+    href: "/projects/rockauto",
+    cta: "View project showcase",
+    image: "/product-detail.png",
+    imageAlt: "RockAuto product detail page redesign",
+  },
+  {
+    label: "Human-Centered AI Research · Jan–May 2026",
+    title: "AI Interface Sense-Making Study",
+    summary:
+      "Designed a Figma prototype that adds sense-making features to an AI chatbot to promote active learning, tested it in a within-subjects user study, and wrote up the findings as an ACM-format paper.",
+    href: "/projects#research",
+    cta: "View research",
+    image: "/hcai-prototype.webp",
+    imageAlt: "AI study assistant prototype showing step-by-step reasoning, assumptions, and confidence level",
+  },
+];
 
 export default function Portfolio() {
   return (
@@ -103,112 +127,142 @@ export default function Portfolio() {
           >
             About
           </h3>
-          <h4 
+          <div style={{ maxWidth: "760px" }}>
+            <p
+              style={{
+                fontSize: "1.05rem",
+                lineHeight: "1.8",
+                color: "#4a5568",
+                margin: "0 0 1rem 0",
+              }}
+            >
+              I&apos;m a UNC Charlotte Computer Science graduate (Human-Computer Interaction
+              concentration, 3.80 GPA), now pursuing a Master in Management at Temple
+              University, Japan Campus in Tokyo. I like working across the whole product:
+              researching what users need, designing the experience, and building it.
+            </p>
+            <p
+              style={{
+                fontSize: "1.05rem",
+                lineHeight: "1.8",
+                color: "#4a5568",
+                margin: 0,
+              }}
+            >
+              Before tech, I spent four years as a Shift Lead and Certified Trainer, running
+              onboarding and coordinating teams in a high-volume, customer-facing environment.
+              I&apos;m seeking software development, product management, and project management
+              roles starting Summer 2027.
+            </p>
+          </div>
+        </section>
+
+        {/* Featured Work */}
+        <section style={{ marginBottom: "4rem" }}>
+          <h3
             style={{
-              fontSize: "1.1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-              marginBottom: "1rem",
+              fontSize: "1.5rem",
+              fontWeight: "600",
+              color: "#1a2332",
+              marginBottom: "1.5rem",
+              paddingBottom: "0.75rem",
+              borderBottom: "3px solid #1a2332",
             }}
           >
-            Background
-          </h4>
-          <p
+            Featured Work
+          </h3>
+          <div
             style={{
-              fontSize: "1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-              marginBottom: "1rem",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: "1.5rem",
             }}
           >
-            I earned a B.A. in Computer Science with a concentration in Human-Computer
-            Interaction from the University of North Carolina at Charlotte (May 2026),
-            graduating with a 3.80 GPA and earning Chancellor's List and Dean's List honors
-            three times each. I am now based in Tokyo, pursuing a Master in Management (MiM)
-            at Temple University, Japan Campus.
-          </p>
-          <h4 
-            style={{
-              fontSize: "1.1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-              marginBottom: "1rem",
-            }}
-          >
-            Recent Work
-          </h4>
-          <p
-            style={{
-              fontSize: "1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-            }}
-          >
-            In my 14-week interaction design capstone, I led end-to-end product ownership of
-            four core shopping flows for a RockAuto.com redesign. Working with a 6-person
-            cross-functional team, I conducted the UI/UX research and design, then built
-            product detail pages, the shopping cart, a 3-step checkout, and a product comparison
-            tool, taking them from discovery through delivery using Next.js, React, TypeScript,
-            and PostgreSQL.
-          </p>
-          <p
-            style={{
-              fontSize: "1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-            }}
-          >
-            I also conducted human-centered AI research, designing a high-fidelity Figma
-            prototype that adds sense-making features to an AI chatbot interface to promote
-            active student learning. I ran a within-subjects user study against standard AI
-            tools and wrote up the findings as an ACM-format research paper with design
-            recommendations for student-facing AI interfaces.
-          </p>
-          <h4 
-            style={{
-              fontSize: "1.1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-              marginBottom: "1rem",
-            }}
-          >
-            Experience & Perspective
-          </h4>
-          <p
-            style={{
-              fontSize: "1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-            }}
-          >
-            In Summer 2025, I studied abroad in Japan and South Korea, broadening my 
-            understanding of global design approaches and user experiences. My background 
-            also includes leadership experience as a Shift Lead and Certified Trainer, where I
-            owned onboarding and training programs and coordinated 6-7 person teams in a
-            high-volume, customer-facing environment.
-          </p>
-          <h4 
-            style={{
-              fontSize: "1.1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-              marginBottom: "1rem",
-            }}
-          >
-            What I'm Looking For
-          </h4>
-          <p
-            style={{
-              fontSize: "1rem",
-              lineHeight: "1.8",
-              color: "#4a5568",
-            }}
-          >
-            I am passionate about creating intuitive interfaces that solve real problems
-            and enhance user experience. I am currently seeking software development,
-            product management, and project management opportunities beginning in
-            Summer 2027.
-          </p>
+            {featuredWork.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  backgroundColor: "white",
+                  border: "1px solid #e1e8ed",
+                  borderRadius: "4px",
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  color: "inherit",
+                  transition: "box-shadow 0.2s, transform 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = "0 6px 18px rgba(26, 35, 50, 0.12)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = "none";
+                  e.currentTarget.style.transform = "none";
+                }}
+              >
+                <div
+                  style={{
+                    aspectRatio: "16 / 9",
+                    backgroundColor: "#f8f9fa",
+                    borderBottom: "1px solid #e1e8ed",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.imageAlt}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "top",
+                      display: "block",
+                    }}
+                  />
+                </div>
+                <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", flex: 1 }}>
+                  <div
+                    style={{
+                      fontSize: "0.8rem",
+                      fontWeight: 600,
+                      color: "#718096",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                  <h4
+                    style={{
+                      fontSize: "1.2rem",
+                      fontWeight: 600,
+                      color: "#1a2332",
+                      margin: "0 0 0.6rem 0",
+                    }}
+                  >
+                    {item.title}
+                  </h4>
+                  <p
+                    style={{
+                      fontSize: "0.95rem",
+                      lineHeight: "1.7",
+                      color: "#4a5568",
+                      margin: "0 0 1rem 0",
+                      flex: 1,
+                    }}
+                  >
+                    {item.summary}
+                  </p>
+                  <span style={{ fontWeight: 600, color: "#1a2332", fontSize: "0.95rem" }}>
+                    {item.cta} →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Skills Section */}
