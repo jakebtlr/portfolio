@@ -41,7 +41,7 @@ export default function ProjectsPage() {
                         margin: 0,
                         }}
                     >
-                        Selected work highlighting front-end development, UI/UX decisions, and
+                        Selected work highlighting UI/UX research and design, front-end development, and
                         user-centered implementation.
                     </p>
                 </div>
@@ -105,8 +105,8 @@ export default function ProjectsPage() {
                             }}
                         >
                             Collaborated with a 6-person team to redesign the user experience for an auto parts e-commerce platform.
-                            Led front-end development for core shopping features including product browsing, cart management, and
-                            checkout processes.
+                            Conducted UI/UX research and design, then led front-end development for core shopping features including
+                            product browsing, cart management, and checkout processes.
                         </p>
 
                         <div style={{ marginBottom: "1.5rem" }}>
@@ -125,6 +125,7 @@ export default function ProjectsPage() {
 
                         <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                             {[
+                                "Conducted UI/UX research and designed the shopping experience, translating user and stakeholder needs into the flows and interfaces the team built",
                                 "Developed responsive product detail pages with dynamic content rendering and similar product recommendations",
                                 "Built shopping cart system with real-time calculations, quantity controls, and persistent data storage",
                                 "Implemented multi-step checkout flow with form validation and secure payment processing interface",

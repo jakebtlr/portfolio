@@ -118,9 +118,10 @@ export default function Portfolio() {
           >
             In my 14-week interaction design capstone, I led end-to-end product ownership of
             four core shopping flows for a RockAuto.com redesign. Working with a 6-person
-            cross-functional team, I took product detail pages, the shopping cart, a 3-step
-            checkout, and a product comparison tool from discovery through delivery using
-            Next.js, React, TypeScript, and PostgreSQL.
+            cross-functional team, I conducted the UI/UX research and design, then built
+            product detail pages, the shopping cart, a 3-step checkout, and a product comparison
+            tool, taking them from discovery through delivery using Next.js, React, TypeScript,
+            and PostgreSQL.
           </p>
           <p
             style={{
