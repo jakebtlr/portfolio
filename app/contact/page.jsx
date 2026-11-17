@@ -18,10 +18,24 @@ export default function ContactPage() {
             minute: "2-digit",
             weekday: "short",
         });
-        const tick = () => setTokyoTime(format.format(new Date()));
+        let timeoutId;
+        // Update right as each new minute starts, rescheduling every time so it never drifts.
+        const tick = () => {
+            const now = new Date();
+            setTokyoTime(format.format(now));
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(tick, 60000 - (now.getSeconds() * 1000 + now.getMilliseconds()) + 50);
+        };
+        // Browsers throttle timers in background tabs, so catch up as soon as the tab is visible again.
+        const onVisible = () => {
+            if (document.visibilityState === "visible") tick();
+        };
         tick();
-        const id = setInterval(tick, 30000);
-        return () => clearInterval(id);
+        document.addEventListener("visibilitychange", onVisible);
+        return () => {
+            clearTimeout(timeoutId);
+            document.removeEventListener("visibilitychange", onVisible);
+        };
     }, []);
 
     const copyEmail = async () => {
