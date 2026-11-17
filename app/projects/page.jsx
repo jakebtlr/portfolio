@@ -128,7 +128,7 @@ export default function ProjectsPage() {
                                 "Conducted UI/UX research and designed the shopping experience, translating user and stakeholder needs into the flows and interfaces the team built",
                                 "Developed responsive product detail pages with dynamic content rendering and similar product recommendations",
                                 "Built shopping cart system with real-time calculations, quantity controls, and persistent data storage",
-                                "Implemented multi-step checkout flow with form validation and secure payment processing interface",
+                                "Implemented multi-step checkout flow with form validation and a simulated payment step",
                                 "Created product comparison tool enabling side-by-side evaluation of specifications and pricing",
                             ].map((item, index) => (
                             <li

@@ -1,8 +1,12 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
-  title: 'Jacob Butler - Developer & Product Builder',
+  title: {
+    default: 'Jacob Butler - Developer & Product Builder',
+    template: '%s | Jacob Butler',
+  },
   description: 'UNC Charlotte Computer Science graduate specializing in Human-Computer Interaction, now pursuing a Master in Management at Temple University, Japan Campus. Experienced in JavaScript, TypeScript, React, and Next.js',
 }
 
@@ -22,6 +26,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   )

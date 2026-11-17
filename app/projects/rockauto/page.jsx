@@ -1,9 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function RockAutoShowcasePage() {
     const [selectedImage, setSelectedImage] = useState(null);
+    const closeButtonRef = useRef(null);
+    const lastTriggerRef = useRef(null);
+
+    const openImage = (item, trigger) => {
+        lastTriggerRef.current = trigger;
+        setSelectedImage(item);
+    };
+
+    const closeImage = () => {
+        setSelectedImage(null);
+        lastTriggerRef.current?.focus();
+    };
+
+    useEffect(() => {
+        if (!selectedImage) return;
+        closeButtonRef.current?.focus();
+        const onKeyDown = (e) => {
+            if (e.key === "Escape") closeImage();
+        };
+        document.addEventListener("keydown", onKeyDown);
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.removeEventListener("keydown", onKeyDown);
+            document.body.style.overflow = previousOverflow;
+        };
+    }, [selectedImage]);
 
     const showcaseItems = [
         {
@@ -37,9 +65,9 @@ export default function RockAutoShowcasePage() {
         {
         title: "Checkout Flow - Step 2",
         description:
-            "Secure payment processing interface with card information input and billing address collection. Features clear security messaging and streamlined form layout.",
+            "Payment step with card information input and billing address collection. Features clear security messaging and a streamlined form layout. Payments are simulated; no real transactions are processed.",
         image: "/checkout-step2.png",
-        tags: ["Payment Integration", "Security", "TypeScript"],
+        tags: ["Form Design", "Trust & Security UX", "TypeScript"],
         },
         {
         title: "Order Confirmation",
@@ -60,6 +88,19 @@ export default function RockAutoShowcasePage() {
             }}
         >
             <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "3rem 2rem" }}>
+                <Link
+                    href="/projects"
+                    style={{
+                        display: "inline-block",
+                        color: "#5a6c7d",
+                        textDecoration: "none",
+                        fontSize: "0.95rem",
+                        fontWeight: 500,
+                        marginBottom: "1.5rem",
+                    }}
+                >
+                    ← Back to Projects &amp; Research
+                </Link>
                 <h3
                     style={{
                         fontSize: "1.5rem",
@@ -85,10 +126,15 @@ export default function RockAutoShowcasePage() {
                             }}
                         >
                             {/* Image */}
-                            <div
-                                onClick={() => setSelectedImage(item.image)}
+                            <button
+                                type="button"
+                                onClick={(e) => openImage(item, e.currentTarget)}
+                                aria-label={`Enlarge screenshot: ${item.title}`}
                                 style={{
+                                    display: "block",
                                     width: "100%",
+                                    padding: 0,
+                                    border: "none",
                                     cursor: "pointer",
                                     position: "relative",
                                     backgroundColor: "#f8f9fa",
@@ -121,7 +167,7 @@ export default function RockAutoShowcasePage() {
                                 >
                                     Click to enlarge
                                 </div>
-                            </div>
+                            </button>
 
                             {/* Description */}
                             <div style={{ padding: "1.5rem" }}>
@@ -173,56 +219,57 @@ export default function RockAutoShowcasePage() {
             {/* Image Modal */}
             {selectedImage && (
                 <div
-                    onClick={() => setSelectedImage(null)}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={`${selectedImage.title} screenshot`}
+                    onClick={closeImage}
                     style={{
                         position: "fixed",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
+                        inset: 0,
                         backgroundColor: "rgba(0, 0, 0, 0.9)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         zIndex: 2000,
                         cursor: "pointer",
-                        padding: "2rem",
+                        padding: "4rem 1rem 1rem",
                     }}
                 >
-                    <div style={{ maxWidth: "90%", maxHeight: "90%", position: "relative" }}>
-                        <img
-                            src={selectedImage}
-                            alt="Enlarged view"
-                            style={{
-                                maxWidth: "100%",
-                                maxHeight: "90vh",
-                                objectFit: "contain",
-                            }}
-                        />
-                        <button
-                            type="button"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setSelectedImage(null);
-                            }}
-                            style={{
-                                position: "absolute",
-                                top: "-2rem",
-                                right: "-2rem",
-                                backgroundColor: "white",
-                                border: "none",
-                                borderRadius: "50%",
-                                width: "40px",
-                                height: "40px",
-                                fontSize: "1.5rem",
-                                cursor: "pointer",
-                                color: "#1a2332",
-                                fontWeight: "bold",
-                            }}
-                        >
-                            ×
-                        </button>
-                    </div>
+                    <button
+                        ref={closeButtonRef}
+                        type="button"
+                        aria-label="Close enlarged image"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            closeImage();
+                        }}
+                        style={{
+                            position: "fixed",
+                            top: "1rem",
+                            right: "1rem",
+                            backgroundColor: "white",
+                            border: "none",
+                            borderRadius: "50%",
+                            width: "44px",
+                            height: "44px",
+                            fontSize: "1.5rem",
+                            lineHeight: 1,
+                            cursor: "pointer",
+                            color: "#1a2332",
+                            fontWeight: "bold",
+                        }}
+                    >
+                        ×
+                    </button>
+                    <img
+                        src={selectedImage.image}
+                        alt={selectedImage.title}
+                        style={{
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                            objectFit: "contain",
+                        }}
+                    />
                 </div>
             )}
         </div>
