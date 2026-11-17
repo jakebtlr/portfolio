@@ -127,7 +127,7 @@ export default function Portfolio() {
           >
             About
           </h3>
-          <div style={{ maxWidth: "760px" }}>
+          <div>
             <p
               style={{
                 fontSize: "1.05rem",
