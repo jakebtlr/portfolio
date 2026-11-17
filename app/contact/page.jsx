@@ -34,8 +34,8 @@ export default function ContactPage() {
                         margin: 0,
                         }}
                     >
-                        I am currently seeking front-end development opportunities starting in Summer
-                        2026. Please feel free to reach out using any of the methods below.
+                        I am currently seeking software development, product, and project management
+                        opportunities starting in Summer 2027. Please feel free to reach out using any of the methods below.
                     </p>
                 </div>
             </header>

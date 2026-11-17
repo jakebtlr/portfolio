@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  title: 'Jacob Butler - Front-End Developer',
+  title: 'Jacob Butler - Developer & Product Builder',
   description: 'UNC Charlotte Computer Science graduate specializing in Human-Computer Interaction, now pursuing a Master in Management at Temple University, Japan Campus. Experienced in JavaScript, TypeScript, React, and Next.js',
 }
 

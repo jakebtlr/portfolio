@@ -23,7 +23,7 @@ export default function Portfolio() {
               color: "#1a2332",
             }}
           >
-            Front-End Developer
+            Developer &amp; Product Builder
           </h2>
           <div style={{ maxWidth: "540px" }}>
             <p
@@ -176,8 +176,9 @@ export default function Portfolio() {
             }}
           >
             I am passionate about creating intuitive interfaces that solve real problems
-            and enhance user experience. I am currently seeking front-end development
-            opportunities beginning in Summer 2026.
+            and enhance user experience. I am currently seeking software development,
+            product management, and project management opportunities beginning in
+            Summer 2027.
           </p>
         </section>
 
