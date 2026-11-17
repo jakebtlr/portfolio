@@ -1,11 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
     const pathname = usePathname();
+    const navRef = useRef(null);
+
+    // Publish the header's height so other sticky elements can sit directly below it.
+    useEffect(() => {
+        const nav = navRef.current;
+        if (!nav) return;
+        const update = () =>
+            document.documentElement.style.setProperty("--header-height", `${nav.offsetHeight}px`);
+        update();
+        const observer = new ResizeObserver(update);
+        observer.observe(nav);
+        return () => observer.disconnect();
+    }, []);
 
     const isActive = (href) =>
         href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
@@ -22,7 +35,8 @@ export default function Header() {
     });
 
     return (
-        <nav 
+        <nav
+            ref={navRef} 
             style={{
                 backgroundColor: "#1a2332",
                 padding: "1.5rem 2rem",

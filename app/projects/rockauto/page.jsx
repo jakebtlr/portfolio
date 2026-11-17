@@ -87,20 +87,33 @@ export default function RockAutoShowcasePage() {
                 color: "#2c3e50",
             }}
         >
-            <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "3rem 2rem" }}>
-                <Link
-                    href="/projects"
-                    style={{
-                        display: "inline-block",
-                        color: "#5a6c7d",
-                        textDecoration: "none",
-                        fontSize: "0.95rem",
-                        fontWeight: 500,
-                        marginBottom: "1.5rem",
-                    }}
-                >
-                    ← Back to Projects &amp; Research
-                </Link>
+            <div
+                style={{
+                    position: "sticky",
+                    top: "var(--header-height, 78px)",
+                    zIndex: 900,
+                    backgroundColor: "rgba(248, 249, 250, 0.96)",
+                    borderBottom: "1px solid #e1e8ed",
+                    backdropFilter: "blur(6px)",
+                }}
+            >
+                <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0.75rem 2rem" }}>
+                    <Link
+                        href="/projects"
+                        style={{
+                            display: "inline-block",
+                            color: "#1a2332",
+                            textDecoration: "none",
+                            fontSize: "0.95rem",
+                            fontWeight: 600,
+                        }}
+                    >
+                        ← Back to Projects &amp; Research
+                    </Link>
+                </div>
+            </div>
+
+            <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "2.5rem 2rem 3rem" }}>
                 <h3
                     style={{
                         fontSize: "1.5rem",
