@@ -14,7 +14,18 @@ export default function Portfolio() {
           borderBottom: "1px solid #e1e8ed",
         }}
       >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            display: "flex",
+            flexWrap: "wrap-reverse",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "2.5rem",
+          }}
+        >
+          <div style={{ flex: "1 1 320px" }}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -49,13 +60,30 @@ export default function Portfolio() {
               Focused on building responsive, user-centered web applications with
               JavaScript, TypeScript, React, and Next.js.
             </p>
-            <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem" }}>
+            <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem", flexWrap: "wrap" }}>
               <LinkButton href="/projects">View Projects &amp; Research →</LinkButton>
               <LinkButton href="/JacobButler_Resume.pdf" download>
                 ⬇ Download Resume
               </LinkButton>
             </div>
           </div>
+          </div>
+          <img
+            src="/headshot.jpg"
+            alt="Jacob Butler"
+            width={800}
+            height={1200}
+            style={{
+              width: "clamp(160px, 45vw, 260px)",
+              maxWidth: "100%",
+              height: "auto",
+              aspectRatio: "2 / 3",
+              objectFit: "cover",
+              borderRadius: "8px",
+              border: "1px solid #e1e8ed",
+              boxShadow: "0 4px 12px rgba(26, 35, 50, 0.08)",
+            }}
+          />
         </div>
       </header>
 
