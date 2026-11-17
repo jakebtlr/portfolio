@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 
 export const metadata = {
   title: 'Jacob Butler - Front-End Developer',
-  description: 'Computer Science student at UNC Charlotte specializing in Human-Computer Interaction. Experienced in JavaScript, TypeScript, React, and Next.js',
+  description: 'UNC Charlotte Computer Science graduate specializing in Human-Computer Interaction, now pursuing a Master in Management at Temple University, Japan Campus. Experienced in JavaScript, TypeScript, React, and Next.js',
 }
 
 export default function RootLayout({ children }) {

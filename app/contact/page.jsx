@@ -75,7 +75,7 @@ export default function ContactPage() {
                                 flexWrap: "wrap",
                             }}
                         >
-                            <LinkButton href="mailto:jbutler20004@gmail.com" external>
+                            <LinkButton href="mailto:butlerjacob919@gmail.com" external>
                                 Email Me
                             </LinkButton>
 
