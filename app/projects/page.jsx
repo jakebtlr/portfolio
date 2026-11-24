@@ -6,6 +6,7 @@ import HeroCard, { heroRowStyle, heroRowLabelStyle, heroRowValueStyle } from "..
 
 const onThisPage = [
     { type: "Project", title: "RockAuto.com E-Commerce Redesign", dates: "Aug–Dec 2025", href: "#projects" },
+    { type: "Project", title: "E-Commerce REST API", dates: "Apr–May 2026", href: "#ecommerce-api" },
     { type: "Research", title: "AI Interface Sense-Making Study", dates: "Jan–May 2026", href: "#research" },
 ];
 
@@ -262,6 +263,177 @@ export default function ProjectsPage() {
                             the project scope. As this is an academic prototype, transactions are simulated and no actual purchases
                             or payments are processed.
                         </p>
+                    </div>
+                </div>
+
+                <div
+                    id="ecommerce-api"
+                    style={{
+                        backgroundColor: "white",
+                        border: "1px solid #e1e8ed",
+                        borderRadius: "4px",
+                        padding: "2rem",
+                        marginTop: "2rem",
+                        scrollMarginTop: "calc(var(--header-height, 78px) + 1rem)",
+                    }}
+                >
+                    <h4
+                        style={{
+                            fontSize: "1.5rem",
+                            fontWeight: "600",
+                            color: "#1a2332",
+                            marginBottom: "0.5rem",
+                        }}
+                    >
+                        E-Commerce REST API
+                    </h4>
+
+                    <p
+                        style={{
+                            fontSize: "0.95rem",
+                            color: "#718096",
+                            marginBottom: "1.5rem",
+                            fontStyle: "italic",
+                        }}
+                    >
+                        Backend Project | Solo | April 2026 - May 2026
+                    </p>
+
+                    <p
+                        style={{
+                            fontSize: "1rem",
+                            lineHeight: "1.8",
+                            color: "#4a5568",
+                            marginBottom: "1.5rem",
+                        }}
+                    >
+                        A RESTful API for an e-commerce platform covering products, orders, and customer reviews, with JWT
+                        authentication and separate permissions for admins and customers. Built with a layered architecture and
+                        deployed on Render with interactive Swagger documentation you can try in the browser.
+                    </p>
+
+                    <a
+                        href="https://ecommerce-api-u7bn.onrender.com/api/docs/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ display: "block", marginBottom: "0.5rem" }}
+                    >
+                        <img
+                            src="/ecommerce-api-docs.webp"
+                            alt="Swagger documentation for the E-Commerce API showing auth and product endpoints"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                display: "block",
+                                border: "1px solid #e1e8ed",
+                                borderRadius: "4px",
+                            }}
+                        />
+                    </a>
+                    <p
+                        style={{
+                            fontSize: "0.85rem",
+                            color: "#718096",
+                            fontStyle: "italic",
+                            margin: "0 0 1.5rem 0",
+                        }}
+                    >
+                        The interactive API documentation. Click the image to open the live docs.
+                    </p>
+
+                    <div style={{ marginBottom: "1.5rem" }}>
+                        <h5
+                            style={{
+                                fontSize: "1rem",
+                                fontWeight: "600",
+                                color: "#1a2332",
+                                marginBottom: "0.75rem",
+                                textTransform: "uppercase",
+                                letterSpacing: "0.5px",
+                            }}
+                        >
+                            Key Contributions
+                        </h5>
+
+                        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                            {[
+                                "Designed and built 17 REST endpoints across users, products, orders, and reviews, documented with OpenAPI 3.0 and interactive Swagger UI",
+                                "Implemented JWT authentication with bcrypt password hashing and two levels of authorization: role checks for admins and ownership checks so customers can only manage their own orders and reviews",
+                                "Structured the code into route, controller, service, and repository layers so business rules stay independent of Express and the database",
+                                "Modeled the data in PostgreSQL with Prisma, storing money as fixed-point decimals and capturing each item's price at purchase time so later price changes never rewrite past orders",
+                                "Kept inventory accurate by restoring stock in a single database transaction when an order is cancelled or deleted, guarded so simultaneous requests can't restock twice",
+                            ].map((item, index) => (
+                                <li
+                                    key={index}
+                                    style={{
+                                        padding: "0.5rem 0 0.5rem 1.5rem",
+                                        position: "relative",
+                                        color: "#4a5568",
+                                        fontSize: "0.95rem",
+                                        lineHeight: "1.6",
+                                        borderLeft: "2px solid #e1e8ed",
+                                        marginLeft: "0.5rem",
+                                    }}
+                                >
+                                    <span
+                                        style={{
+                                            position: "absolute",
+                                            left: "-5px",
+                                            width: "8px",
+                                            height: "8px",
+                                            backgroundColor: "#1a2332",
+                                            borderRadius: "50%",
+                                            top: "1rem",
+                                        }}
+                                    ></span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div style={{ marginBottom: "1.5rem" }}>
+                        <h5
+                            style={{
+                                fontSize: "1rem",
+                                fontWeight: "600",
+                                color: "#1a2332",
+                                marginBottom: "0.75rem",
+                                textTransform: "uppercase",
+                                letterSpacing: "0.5px",
+                            }}
+                        >
+                            Technologies
+                        </h5>
+
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                            {["Node.js", "Express", "PostgreSQL", "Prisma ORM", "JWT", "bcrypt", "OpenAPI / Swagger", "Render"].map((tech) => (
+                                <span
+                                    key={tech}
+                                    style={{
+                                        backgroundColor: "#e1e8ed",
+                                        color: "#1a2332",
+                                        padding: "0.4rem 0.9rem",
+                                        fontSize: "0.85rem",
+                                        fontWeight: "500",
+                                        borderRadius: "3px",
+                                        border: "1px solid #d1d9e0",
+                                    }}
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                        <LinkButton href="https://ecommerce-api-u7bn.onrender.com/api/docs/" external>
+                            Try the Live API Docs →
+                        </LinkButton>
+
+                        <LinkButton href="https://github.com/jakebtlr/ecommerce-api" external>
+                            View GitHub Repository →
+                        </LinkButton>
                     </div>
                 </div>
             </section>
