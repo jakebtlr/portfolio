@@ -16,6 +16,16 @@ const featuredWork = [
     imageAlt: "RockAuto product detail page redesign",
   },
   {
+    label: "Backend Project · Apr–May 2026",
+    title: "E-Commerce REST API",
+    summary:
+      "Built a 17-endpoint REST API for products, orders, and reviews with JWT authentication, role-based access, and a layered architecture, using Node.js, Express, PostgreSQL, and Prisma.",
+    href: "/projects#ecommerce-api",
+    cta: "View project",
+    image: "/ecommerce-api-docs.webp",
+    imageAlt: "Swagger documentation for the E-Commerce API",
+  },
+  {
     label: "Human-Centered AI Research · Jan–May 2026",
     title: "AI Interface Sense-Making Study",
     summary:
@@ -174,7 +184,7 @@ export default function Portfolio() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
               gap: "1.5rem",
             }}
           >

@@ -25,6 +25,18 @@ I did the UI/UX research and design for the core shopping flows, then built:
 
 > Note: This project is an academic prototype. Transactions are simulated and no real payments are processed.
 
+### E-Commerce REST API
+
+A solo backend project (Apr–May 2026): a RESTful API for products, orders, and customer reviews built with Node.js, Express, PostgreSQL, and Prisma.
+
+- 17 endpoints with JWT authentication and role-based access for admins and customers
+- Layered architecture: routes, controllers, services, and repositories
+- Interactive OpenAPI 3.0 / Swagger documentation, deployed on Render
+
+**Links**
+- Live API docs: https://ecommerce-api-u7bn.onrender.com/api/docs/
+- Repository: https://github.com/jakebtlr/ecommerce-api
+
 ### Human-Centered AI Research: AI Interface Sense-Making Study
 
 Research at UNC Charlotte (Jan–May 2026) on how interface design can help students actively learn from AI chatbots instead of passively consuming answers.
