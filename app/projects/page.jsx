@@ -239,7 +239,7 @@ export default function ProjectsPage() {
                         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                             <LinkButton href="/projects/rockauto">View Project Showcase →</LinkButton>
 
-                            <LinkButton href="https://itis4390-rockauto.loganphinney.com/" external>
+                            <LinkButton href="https://capstone-rockauto.vercel.app/" external>
                             View Live Site →
                             </LinkButton>
 

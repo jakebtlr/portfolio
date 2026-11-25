@@ -20,7 +20,7 @@ I did the UI/UX research and design for the core shopping flows, then built:
 - Product comparison tool for side-by-side evaluation
 
 **Links**
-- Live demo: https://itis4390-rockauto.loganphinney.com/
+- Live demo: https://capstone-rockauto.vercel.app/
 - Repository: https://github.com/LPhinney1/ITIS4390-capstone-rockauto
 
 > Note: This project is an academic prototype. Transactions are simulated and no real payments are processed.
